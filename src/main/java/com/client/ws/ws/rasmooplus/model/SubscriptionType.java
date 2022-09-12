@@ -10,7 +10,7 @@ public class SubscriptionType implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "subscription_type_id")
+    @Column(name = "subscriptions_type_id")
     private Long id;
 
     private String name;
