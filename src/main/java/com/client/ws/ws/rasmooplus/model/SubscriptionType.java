@@ -13,7 +13,7 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name = "subscription_type")
+@Table(name = "subscriptions_type")
 @Entity
 public class SubscriptionType implements Serializable {
 
