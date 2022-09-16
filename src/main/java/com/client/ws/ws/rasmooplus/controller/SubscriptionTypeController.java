@@ -2,6 +2,7 @@ package com.client.ws.ws.rasmooplus.controller;
 
 import com.client.ws.ws.rasmooplus.model.SubscriptionType;
 import com.client.ws.ws.rasmooplus.repository.SubscriptionTypeRepository;
+import com.client.ws.ws.rasmooplus.service.SubscriptionTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,10 +17,10 @@ import java.util.List;
 public class SubscriptionTypeController {
 
     @Autowired
-    private SubscriptionTypeRepository subscriptionTypeRepository;
+    private SubscriptionTypeService subscriptionTypeService;
 
     @GetMapping()
     public ResponseEntity<List<SubscriptionType>> findAll() {     // 1º Criado o responseEntity de pesquisa
-        return ResponseEntity.status(HttpStatus.OK).body(subscriptionTypeRepository.findAll());
+        return ResponseEntity.status(HttpStatus.OK).body(subscriptionTypeService.findAll());
     }
 }
