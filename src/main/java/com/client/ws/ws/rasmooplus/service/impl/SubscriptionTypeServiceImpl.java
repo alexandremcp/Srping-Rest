@@ -6,6 +6,7 @@ import com.client.ws.ws.rasmooplus.service.SubscriptionTypeService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class SubscriptionTypeServiceImpl implements SubscriptionTypeService {
@@ -25,7 +26,11 @@ public class SubscriptionTypeServiceImpl implements SubscriptionTypeService {
 
     @Override
     public SubscriptionType findById(Long id) {
-        return null;
+        Optional<SubscriptionType> optionalSubscriptionType = subscriptionTypeRepository.findById(id);
+        if (optionalSubscriptionType.isEmpty()) {
+            return null;
+        }
+        return subscriptionTypeRepository.findById(id).get();
     }
 
     @Override
