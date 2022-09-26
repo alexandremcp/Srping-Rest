@@ -27,10 +27,10 @@
 |                                                                            |       Exclusão de recursos                               |       Gerando a senha para app gmail                               |
 |                                                                            |       Handlers com o ErrorResponseDto                    |       Expondo novo recurso                                         |
 |                                                                            |       Mapeamento                                         |       Testando fluxo de cadastro                                   |
-|                                                                            |       Validando o parâmetros de entrada com JavaxValidati|       Testando fluxo de cadastro                                   |
-|                                                                            |       HATEOAS                                            |       Testando fluxo de cadastro                                   |
-|                                                                            |       Recurso para criar o usuário                       |       Testando fluxo de cadastro                                   |
-|                                                                            |       Documentando nossa API com Swagger                 |       Testando fluxo de cadastro                                   |
+|                                                                            |       Validando o parâmetros de entrada com JavaxValidati|                                          |
+|                                                                            |       HATEOAS                                            |                                          |
+|                                                                            |       Recurso para criar o usuário                       |                                          |
+|                                                                            |       Documentando nossa API com Swagger                 |                                          |
 
 |       Spring Security e JWT                                                |       JUNIT 5 e Mockito                                  |       Documentação e versionamento de API's                        |
 |       :--                                                                  |       :--                                                |       :--                                                          |
