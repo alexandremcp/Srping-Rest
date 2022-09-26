@@ -1,4 +1,4 @@
-# Java17
+# Spring Rest
 ### Curso de Spring Rest da Rasmoo
  Construindo Web Services com Java 17
 </br>
