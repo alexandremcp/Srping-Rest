@@ -40,4 +40,23 @@ public class SubscriptionTypeController {
         return ResponseEntity.status(HttpStatus.OK).body(subscriptionTypeService.update(id, dto));
     }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> delete(@PathVariable("id") Long id) {
+        subscriptionTypeService.delete(id);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
+    }
+
 }
+
+/*
+CONTROLLER - parte 1
+=====================
+1 - O controller recebe os dados vindos do front-end no formato JSON, e faz as validações.
+2 - O controller converte os dados recebidos numa classe de modelo (model), que representa uma tabela no banco de dados,
+    neste caso, SubscriptionType -->  ResponseEntity<SubscriptionType>
+3 - O controller chama o service, que é a camada de negócio, onde é feita a lógica de negócio.
+4 - O controle por fim retorna os dados para o front-end no formato JSON.
+
+O controller também Serve para que o Spring saiba onde encontrar o mapeamento de cada método quando feito o acesso pela URL no navegador,
+    como por exemplo o @GetMapping("/{id}")
+ */

@@ -62,7 +62,10 @@ public class SubscriptionTypeServiceImpl implements SubscriptionTypeService {
     }
 
     @Override
-    public void delete(Long id) {}
+    public void delete(Long id) {
+        getSubscriptionType(id);   //Chama o método getSubscriptionType para verificar se o id existe
+        subscriptionTypeRepository.deleteById(id);
+    }
 
 
     // Essa parte foi extraída do findById e transformada em um método para ser reutilizado para ser
@@ -75,3 +78,17 @@ public class SubscriptionTypeServiceImpl implements SubscriptionTypeService {
         return optionalSubscriptionType.get();
     }
 }
+/*
+SERVICE IMPL - parte 3
+======================
+1 - O ServiceImpl é a implementação da interface Service, que representa a lógica de negócio
+    --> SubscriptionTypeServiceImpl implements SubscriptionTypeService
+2 - O ServiceImpl é uma classe, onde são implementados os métodos da interface SubscriptionTypeService.
+3 - O ServiceImpl faz a injeção de dependência do Repository, para onde passa os dados do modelo, neste caso, SubscriptionType.
+4 - O ServiceImpl tem por padrão a chamada dos métodos implementados na interface JpaRepository, que são os métodos padrões de CRUD como:
+    --> findAll()
+    --> findById()
+    --> save()
+    --> deleteById()
+5 - O ServiceImpl por fim retorna os dados para o Controller.
+*/
