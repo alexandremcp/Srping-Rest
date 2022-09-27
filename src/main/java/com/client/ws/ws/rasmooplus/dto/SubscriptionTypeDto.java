@@ -20,3 +20,8 @@ public class SubscriptionTypeDto {
     private String productKey;
 
 }
+
+/*
+A classe SubscriptionTypeDto é responsável por representar os dados de um SubscriptionType.
+A classe faz o mapeamento de um DTO para uma entidade e vice-versa.
+ */
