@@ -1,5 +1,6 @@
 package com.client.ws.ws.rasmooplus.service.impl;
 
+import com.client.ws.ws.rasmooplus.controller.SubscriptionTypeController;
 import com.client.ws.ws.rasmooplus.dto.SubscriptionTypeDto;
 import com.client.ws.ws.rasmooplus.exception.BadRequestException;
 import com.client.ws.ws.rasmooplus.exception.NotFoundException;
@@ -7,6 +8,7 @@ import com.client.ws.ws.rasmooplus.mapper.SubscriptionTypeMapper;
 import com.client.ws.ws.rasmooplus.model.SubscriptionType;
 import com.client.ws.ws.rasmooplus.repository.SubscriptionTypeRepository;
 import com.client.ws.ws.rasmooplus.service.SubscriptionTypeService;
+import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,6 +18,9 @@ import java.util.prefs.BackingStoreException;
 
 @Service
 public class SubscriptionTypeServiceImpl implements SubscriptionTypeService {
+
+    private static final String UPDATE = "update";
+    private static final String DELETE = "delete";
 
     // Faz a injeção de dependência
     private final SubscriptionTypeRepository subscriptionTypeRepository;
@@ -32,7 +37,10 @@ public class SubscriptionTypeServiceImpl implements SubscriptionTypeService {
 
     @Override
     public SubscriptionType findById(Long id) {
-        return getSubscriptionType(id);
+        return getSubscriptionType(id).add(WebMvcLinkBuilder.linkTo(WebMvcLinkBuilder.methodOn(SubscriptionTypeController.class).findById(id)).withSelfRel()
+            ).add(WebMvcLinkBuilder.linkTo(WebMvcLinkBuilder.methodOn(SubscriptionTypeController.class).update(id, new SubscriptionTypeDto())).withRel("UPDATE")
+            ).add(WebMvcLinkBuilder.linkTo(WebMvcLinkBuilder.methodOn(SubscriptionTypeController.class).delete(id)).withRel("DELETE")
+        );
     }
 
     @Override
