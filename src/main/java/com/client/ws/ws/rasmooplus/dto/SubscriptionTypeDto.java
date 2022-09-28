@@ -19,18 +19,18 @@ public class SubscriptionTypeDto {
 
     private Long id;
 
-    @NotBlank(message = "campo name não pode ser nulo ou vazio")
-    @Size(min = 5, max = 30)
+    @NotBlank(message = "Não pode ser nulo ou vazio")
+    @Size(min = 5, max = 30, message = "Deve ter entre 5 e 30 caracteres")
     private String name;
 
-    @Max(value = 12, message = "campo accessMonth não pode ser maior que 12")
-    private Long accessMonth;
+    @Max(value = 12, message = "Não pode ser maior que 12")
+    private Long accessMonths;
 
-    @NotNull(message = "campo price não pode ser nulo")
+    @NotNull(message = "Não pode ser nulo")
     private BigDecimal price;
 
-    @NotBlank(message = "campo productType não pode ser nulo ou vazio")
-    @Size(min = 5, max = 15, message = "campo productType deve ter entre 5 e 15 caracteres")
+    @NotBlank(message = "Não pode ser nulo ou vazio")
+    @Size(min = 5, max = 15, message = "Deve ter entre 5 e 15 caracteres")
     private String productKey;
 
 }
