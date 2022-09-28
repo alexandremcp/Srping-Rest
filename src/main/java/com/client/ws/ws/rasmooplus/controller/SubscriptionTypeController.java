@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Objects;
 
@@ -31,7 +32,7 @@ public class SubscriptionTypeController {
     }
 
     @PostMapping
-    public ResponseEntity<SubscriptionType> create(@RequestBody SubscriptionTypeDto dto) {
+    public ResponseEntity<SubscriptionType> create(@Valid @RequestBody SubscriptionTypeDto dto) {
         return ResponseEntity.status(HttpStatus.CREATED).body(subscriptionTypeService.create(dto));
     }
 
@@ -59,4 +60,7 @@ CONTROLLER - parte 1
 
 O controller também Serve para que o Spring saiba onde encontrar o mapeamento de cada método quando feito o acesso pela URL no navegador,
     como por exemplo o @GetMapping("/{id}")
+
+
+@Valid --> faz a validação dos dados vindos do front-end, conforme as anotações feitas na classe SubscriptionTypeDto
  */
