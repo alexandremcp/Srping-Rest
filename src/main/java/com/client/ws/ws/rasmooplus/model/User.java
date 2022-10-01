@@ -31,7 +31,7 @@ public class User implements Serializable {
     private String cpf;
 
     @Column(name = "dt_subscription")
-    LocalDate dtSubscription = LocalDate.now();
+    LocalDate dtSubscription;
 
     @Column(name = "dt_expiration")
     private LocalDate dtExpiration;
