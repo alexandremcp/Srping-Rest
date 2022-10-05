@@ -81,5 +81,4 @@ MethodArgumentNotValidException --> Essa classe é uma exceção que é lançada
     getBindingResult --> Retorna um objeto BindingResult que contém os erros de validação.
     getFieldErrors --> Retorna uma lista de FieldError que contém os erros de validação.
     FieldError --> Retorna o nome do campo que falhou na validação e a mensagem de erro.
-
 */
